@@ -9,18 +9,20 @@ function Connector({ web3Connector }: { web3Connector: Web3Connector }) {
     if (isActive) {
       connector.deactivate()
     } else {
-      connectors.forEach(([connector]) => connector.deactivate())
+      console.log(' connectors', connectors)
+      connectors.forEach(([connector]) => {
+        return connector.deactivate()
+      })
       connector.activate()
     }
   }, [connector, isActive])
 
   return (
     <div className={styles.connector}>
-      <label>{getConnectorName(connector)}</label>
-      <button onClick={onClick}>{isActive ? 'Disconnect' : 'Connect'}</button>
-      <svg className={[styles.status, isActive && styles.active].join(' ')} viewBox="0 0 2 2">
-        <circle cx={1} cy={1} r={1} />
-      </svg>
+      <label className={styles.connectorLabel}>{getConnectorName(connector).toLowerCase()}</label>
+      <button onClick={onClick} className={`${isActive ? styles.connected : styles.disconnect}`}>
+        {isActive ? 'Disconnect' : 'Connect'}
+      </button>
     </div>
   )
 }
