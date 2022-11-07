@@ -25,6 +25,7 @@
         "@web3-react/walletconnect": "^8.0.25-beta.0",
         "chart.js": "^3.9.1",
         "faker": "^5.5.3",
+        "moralis-v1": "^1.12.0",
         "react": "^17.0.2",
         "react-chartjs-2": "^4.3.1",
         "react-dom": "^17.0.2",

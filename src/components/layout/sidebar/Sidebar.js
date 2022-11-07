@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import './Sidebar.css'
 import logo from '../../../images/logo_.png'
 import Web3Connectors from '../../Web3Connectors'
+
 const Sidebar = () => {
   return (
     <div className="main">
@@ -19,6 +20,9 @@ const Sidebar = () => {
       </Link>
       <Link to="/explore-funds" className="sideLink">
         How it works
+      </Link>
+      <Link to="/create-tokens" className="sideLink">
+        Create Tokens
       </Link>
       <div className="web3ConnectorSidebar">
         <Web3Connectors />
