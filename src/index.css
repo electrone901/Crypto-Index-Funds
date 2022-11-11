@@ -16,3 +16,12 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.maincontainer {
+  padding: 0 40px;
+  width: 100%;
+}
+
+.mt0 { margin-top: 0; }
+.mb0 { margin-bottom: 0; }
+.pb3 { padding-bottom: 30px !important; }

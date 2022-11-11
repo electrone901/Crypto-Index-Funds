@@ -4,6 +4,7 @@ import Navbar from './layout/navbar/Navbar'
 import Sidebar from './layout/sidebar/Sidebar'
 import Footer from './layout/footer/Footer'
 import Dashboard from './dashboard/Dashboard'
+import IndexDetails from './index-details/IndexDetails'
 import CreateTokens from './create-tokens/CreateTokens'
 import { useActiveProvider } from '../connectors'
 // import Web3Modal from 'web3modal'
@@ -33,6 +34,15 @@ export default function App() {
   return (
     <BrowserRouter className={styles.container}>
       <Routes>
+        <Route
+          path="/index-funds/:fundid"
+          element={
+            <div className={styles.justflex}>
+              <Sidebar />
+              <IndexDetails />
+            </div>
+          }
+        />
         <Route
           path="/explore-funds"
           element={

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom'
 import Avatar from '@mui/material/Avatar';
 import AvatarGroup from '@mui/material/AvatarGroup';
 import Table from '@mui/material/Table';
@@ -30,7 +31,7 @@ export default function BasicTable({ indexfunds }) {
         <TableHead>
           <TableRow>
             <TableCell className="labelwhite">Fund</TableCell>
-            <TableCell className="labelwhite">ID</TableCell>
+            <TableCell className="labelwhite">Price</TableCell>
             <TableCell className="labelwhite">Assets</TableCell>
             <TableCell className="labelwhite">Number of Owners</TableCell>
             <TableCell className="labelwhite">30D %</TableCell>
@@ -43,9 +44,9 @@ export default function BasicTable({ indexfunds }) {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell className="labelwhite" component="th" scope="row">
-                {i.tokenname}
+                <Link to={`/index-funds/${i.id}`}>{i.tokenname}</Link>
               </TableCell>
-              <TableCell className="labelwhite">{i.id}</TableCell>
+              <TableCell className="labelwhite">${i.price}</TableCell>
               <TableCell className="labelwhite">
               <AvatarGroup className='avatargroup' max={4}>
                 {i.tokens.map((t, index) => (
@@ -60,7 +61,7 @@ export default function BasicTable({ indexfunds }) {
               </AvatarGroup>
               </TableCell>
               <TableCell className="labelwhite">{i.numberofholders}</TableCell>
-              <TableCell className="labelwhite">{i.price}</TableCell>
+              <TableCell className="labelwhite">0</TableCell>
             </TableRow>
           ))}
         </TableBody>

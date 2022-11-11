@@ -35,6 +35,7 @@ export default function Dashboard() {
   const [totalbalance, settotalbalance] = useState('0')
   const [indexfunds, setindexfunds] = useState([])
   const [transactions, settransactions] = useState([])
+  const [tokens, settokens] = useState([])
 
   useEffect(() => {
     if (provider) connectWallet()
@@ -64,7 +65,7 @@ export default function Dashboard() {
       }),
     })
     const data = await response.json()
-    console.log('what is data', data)
+    console.log(data)
     settotalbalance(data.total)
   }
 
@@ -104,8 +105,8 @@ export default function Dashboard() {
                   <p className={styles.paddingLeft}> {i.tokenname}</p>
                 </div>
                 <ChartGraph />
-                <p className={styles.margin0}>USD 3500.96</p>
-                <p className={styles.redPrice}>-54.62 (3.21%)</p>
+                <p className={styles.margin0}>USD {i.price}</p>
+                <p className={styles.redPrice}>-0.50 (1%)</p>
               </div>
             ))}
           </div>
